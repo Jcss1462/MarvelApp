@@ -1,0 +1,21 @@
+/* Estilo de los enlaces en el header */
+header .nav-link {
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+header .nav-link:hover {
+    color: #f8b600; /* Color dorado */
+}
+
+/* Estilo del footer */
+footer .social-media a {
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer .social-media a:hover {
+    color: #f8b600;
+}
