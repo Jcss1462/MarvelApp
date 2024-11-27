@@ -4,6 +4,28 @@
 
 }
 
+.back-button {
+  position: absolute;
+  top: 130px; /* Ajusta según tu diseño */
+  left: 20px; /* Ajusta según tu diseño */
+  z-index: 1;
+  background-color: #DC3545;
+  border: none;
+  color: #202020;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 2rem;
+}
+
+.back-button:hover {
+  background-color: #ff1e1e;
+  transform: scale(1.05);
+}
+
+
 .marvel-theme {
     background-color: rgb(255, 255, 255);
     border-radius: 15px;
