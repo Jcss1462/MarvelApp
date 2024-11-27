@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
-import { Auth, createUserWithEmailAndPassword } from '@angular/fire/auth';
+import { Auth, createUserWithEmailAndPassword, sendPasswordResetEmail, signInWithEmailAndPassword} from '@angular/fire/auth';
 import { logInUser, NewUser } from '../Models/user';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+
 
 @Injectable({
   providedIn: 'root'
@@ -18,5 +18,9 @@ export class UserService {
 
   async login(user: logInUser){
     return await signInWithEmailAndPassword(this.firebaseAuth, user.email, user.password);
+  }
+
+  async resetPassword(email: string){
+    return sendPasswordResetEmail(this.firebaseAuth, email);
   }
 }
