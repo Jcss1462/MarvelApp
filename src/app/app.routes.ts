@@ -1,6 +1,8 @@
 import { Routes } from '@angular/router';
 import { HeaderComponent } from './domains/shared/components/header/header.component'
 import { ComicListComponent } from './domains/coimics/comic-list/comic-list.component';
+import { RegisterComponent } from './domains/user/register/register.component';
+import { LoginComponent } from './domains/user/login/login.component';
 
 export const routes: Routes = [
 
@@ -12,7 +14,16 @@ export const routes: Routes = [
             {
                 path: "",
                 component: ComicListComponent
+            }
+            ,{
+                path: "signin",
+                component: RegisterComponent
+            }
+            ,{
+                path: "login",
+                component: LoginComponent
             },
+
             
         ]
     }
