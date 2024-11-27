@@ -3,6 +3,7 @@ import { HeaderComponent } from './domains/shared/components/header/header.compo
 import { ComicListComponent } from './domains/coimics/comic-list/comic-list.component';
 import { RegisterComponent } from './domains/user/register/register.component';
 import { LoginComponent } from './domains/user/login/login.component';
+import { ForgotPasswordComponent } from './domains/user/forgot-password/forgot-password.component';
 
 export const routes: Routes = [
 
@@ -22,7 +23,12 @@ export const routes: Routes = [
             ,{
                 path: "login",
                 component: LoginComponent
-            },
+            }
+            ,{
+                path: "forgotPassword",
+                component: ForgotPasswordComponent
+            }
+
 
             
         ]

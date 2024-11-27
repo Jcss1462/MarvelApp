@@ -1,1 +1,55 @@
-<p>login works!</p>
+<div id="loginContainer" class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <!-- Botón de regreso -->
+            <button class="btn btn-danger back-button" (click)="goBack()">
+                <i class="bi bi-arrow-left-circle-fill"></i>
+            </button>
+            <div class="card shadow-lg border-0 marvel-theme">
+                <div class="card-header text-center">
+                    <h2><b>Inicio de Sesión</b></h2>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                        <!-- Campo de Correo -->
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo Electrónico</label>
+                            <input type="email" id="email" class="form-control" formControlName="email"
+                                placeholder="Ejemplo: usuario@marvel.com" />
+                            @if(loginForm.get('email')?.invalid && loginForm.get('email')?.touched){
+                                <div class="text-danger mt-1">
+                                    Ingresa un correo válido.
+                                </div>
+                            }
+
+                        </div>
+
+                        <!-- Campo de Contraseña -->
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Contraseña</label>
+                            <input type="password" id="password" class="form-control" formControlName="password"
+                                placeholder="Tu contraseña" />
+                            @if(loginForm.get('password')?.invalid && loginForm.get('password')?.touched){
+                                <div class="text-danger mt-1">
+                                    La contraseña es obligatoria.
+                                </div>
+                            }
+                        </div>
+
+                        <!-- Botón de Iniciar Sesión -->
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-danger" [disabled]="loginForm.invalid">
+                                Iniciar Sesión
+                            </button>
+                        </div>
+
+                        <!-- Enlace de Olvidé mi contraseña -->
+                        <div class="text-center mt-3">
+                            <a routerLink="/forgotPassword" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -4,3 +4,9 @@ export interface NewUser {
     cc : number;
     password : string;
 }
+
+export interface logInUser {
+    email : string;
+    password : string;
+}
+

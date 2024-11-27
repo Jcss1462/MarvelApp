@@ -1,0 +1,92 @@
+#loginContainer {
+    padding-top: 100px;
+}
+
+.back-button {
+    position: absolute;
+    top: 130px; /* Ajusta según tu diseño */
+    left: 20px; /* Ajusta según tu diseño */
+    z-index: 1;
+    background-color: #DC3545;
+    border: none;
+    color: #202020;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 2rem;
+  }
+  
+  .back-button:hover {
+    background-color: #ff1e1e;
+    transform: scale(1.05);
+  }
+  
+  
+
+
+.card {
+    position: relative;
+}
+
+.marvel-theme {
+    background-color: #ffffff;
+    border-radius: 15px;
+}
+
+.card-header {
+    background-color: #DC3545;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 15px;
+    color: white;
+}
+
+.card-body {
+    color: black;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.form-control {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: 1px solid #e62429;
+    border-radius: 10px;
+}
+
+.form-control:focus {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border-color: #ff1e1e;
+    box-shadow: 0 0 10px #e62429;
+}
+
+.btn-danger {
+    background-color: #DC3545;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-danger:hover {
+    background-color: #ff1e1e;
+    transform: scale(1.05);
+}
+
+.text-danger {
+    font-size: 0.85rem;
+}
+
+.forgot-password {
+    color: #DC3545;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+    color: #ff1e1e;
+    text-decoration: underline;
+}

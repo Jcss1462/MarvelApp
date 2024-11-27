@@ -5,6 +5,7 @@ import { SpinnerService } from '../../shared/services/spinner.service';
 import { UserService } from '../../shared/services/user.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-register',
@@ -18,7 +19,7 @@ export class RegisterComponent {
   private spinnerService = inject(SpinnerService);
   private userService = inject(UserService);
 
-  constructor(private fb: FormBuilder, private toastr: ToastrService,private router: Router) {
+  constructor(private fb: FormBuilder, private toastr: ToastrService,private router: Router, private location: Location) {
     this.registerForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       name: ['', Validators.required],
@@ -50,7 +51,7 @@ export class RegisterComponent {
           }
         ).catch((response) => {
           console.log(response);
-          this.toastr.error("Error al crear usuario: \n" +response.message);
+          this.toastr.info("Error al crear usuario: \n" +response.message);
           this.spinnerService.showSpinner.update(() => false);
         }
       );
@@ -62,7 +63,7 @@ export class RegisterComponent {
   }
 
   goBack() {
-    this.router.navigate(['/']);
+    this.location.back();
   }
 
 }
