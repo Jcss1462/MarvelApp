@@ -1,0 +1,44 @@
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #00000028; /* Fondo negro para destacar el escudo */
+  }
+  
+  .shield {
+    width: 200px; /* Ajusta el tamaño de la imagen según tu preferencia */
+    animation: spin 5s infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+      animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); /* Lento al inicio */
+    }
+    45% {
+      transform: rotate(90deg);
+      animation-timing-function: linear; /* Máxima velocidad */
+    }
+    55% {
+      transform: rotate(450deg); /* 1 vuelta completa + 90 grados */
+      animation-timing-function: linear;
+    }
+    65% {
+      transform: rotate(810deg); /* 2 vueltas completas + 90 grados */
+      animation-timing-function: linear;
+    }
+    75% {
+      transform: rotate(1170deg); /* 3 vueltas completas + 90 grados */
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); /* Desaceleración */
+    }
+    100% {
+      transform: rotate(1440deg); /* 4 vueltas completas */
+    }
+  }
+  
+  .spinner {
+    animation: spin 4s infinite; /* 4 segundos por animación */
+  }
+  
+  
