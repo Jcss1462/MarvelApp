@@ -1,6 +1,6 @@
 import { inject, Injectable } from '@angular/core';
 import { Auth, createUserWithEmailAndPassword, sendPasswordResetEmail, signInWithEmailAndPassword} from '@angular/fire/auth';
-import { logInUser, NewUser } from '../Models/user';
+import { LogInUser, NewUser, UserData } from '../Models/user';
 import { environment } from '../../../../environments/environment.development';
 import { HttpClient } from '@angular/common/http';
 
@@ -24,8 +24,13 @@ export class UserService {
     return  this.http.post<void>(url, newUser);
   }
 
-  async login(user: logInUser){
-    return await signInWithEmailAndPassword(this.firebaseAuth, user.email, user.password);
+  async login(user: LogInUser){
+    return await signInWithEmailAndPassword(this.firebaseAuth, user.email, user.uid);
+  }
+
+  loginBackend(user: LogInUser) {
+    const url=environment.MarvelAppBack+"/Usuario/Login";
+    return  this.http.post<UserData>(url, user);
   }
 
   async resetPassword(email: string){

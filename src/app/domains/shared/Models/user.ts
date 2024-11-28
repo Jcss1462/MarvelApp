@@ -5,8 +5,17 @@ export interface NewUser {
     password : string;
 }
 
-export interface logInUser {
+export interface LogInUser {
     email : string;
-    password : string;
+    uid : string;
+}
+
+export interface UserData {
+    idUsuario : number;
+    nombre : string;
+    identificacion : string;
+    uid : string;
+    correo : string;
+    fechaRegistro : string;
 }
 
