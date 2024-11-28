@@ -6,10 +6,18 @@ header .nav-link {
     font-weight: bold;
     text-transform: uppercase;
     transition: color 0.3s ease;
+    color: white;
 }
 
 header .nav-link:hover {
     color: #f8b600; /* Color dorado */
+}
+
+header label{
+
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffbb00;
 }
 
 /* Estilo del footer */

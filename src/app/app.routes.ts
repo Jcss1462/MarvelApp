@@ -4,6 +4,7 @@ import { ComicListComponent } from './domains/coimics/comic-list/comic-list.comp
 import { RegisterComponent } from './domains/user/register/register.component';
 import { LoginComponent } from './domains/user/login/login.component';
 import { ForgotPasswordComponent } from './domains/user/forgot-password/forgot-password.component';
+import { ComicFavComponent } from './domains/coimics/comic-fav/comic-fav.component';
 
 export const routes: Routes = [
 
@@ -27,6 +28,10 @@ export const routes: Routes = [
             ,{
                 path: "forgotPassword",
                 component: ForgotPasswordComponent
+            }
+            ,{
+                path: "myFavoriteComics",
+                component: ComicFavComponent
             }
 
 

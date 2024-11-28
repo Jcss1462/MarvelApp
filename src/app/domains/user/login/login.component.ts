@@ -61,7 +61,7 @@ export class LoginComponent {
                     next: (response) => {
 
                       //guardo la informacion del usuario
-                      this.localStorageService.userData.set(response);
+                      this.localStorageService.setUserDataLocalStorage(response);
                       this.toastr.success("Bienvenido "+response.nombre);
                       //redirijo a la pagina principal
                       this.router.navigate(['/']);   
