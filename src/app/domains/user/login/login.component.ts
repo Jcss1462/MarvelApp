@@ -7,6 +7,7 @@ import { UserService } from '../../shared/services/user.service';
 import { LogInUser } from '../../shared/Models/user';
 import { Location } from '@angular/common';
 import { HealthCheckService } from '../../shared/services/health-check.service';
+import { LocalStorageService } from '../../shared/services/local-storage.service';
 
 @Component({
   selector: 'app-login',
@@ -20,6 +21,7 @@ export class LoginComponent {
   private spinnerService = inject(SpinnerService);
   private userService = inject(UserService);
   private healtCheckService = inject(HealthCheckService);
+  private localStorageService = inject(LocalStorageService);
 
   constructor(private fb: FormBuilder, private router: Router, private toastr: ToastrService, private location: Location) {
     // Inicialización del formulario reactivo
@@ -58,15 +60,11 @@ export class LoginComponent {
                   {
                     next: (response) => {
 
-                      //elimino la informacion del local storage
-                      localStorage.removeItem('MarevelAppUserData');         
-                      //guardo la informacion en el localstorage
-                      const userData = JSON.stringify(response);
-                      localStorage.setItem('MarevelAppUserData', userData);
+                      //guardo la informacion del usuario
+                      this.localStorageService.userData.set(response);
                       this.toastr.success("Bienvenido "+response.nombre);
                       //redirijo a la pagina principal
-                      this.router.navigate(['/']);
-                      
+                      this.router.navigate(['/']);   
                       this.spinnerService.showSpinner.update(() => false);
 
                     },
