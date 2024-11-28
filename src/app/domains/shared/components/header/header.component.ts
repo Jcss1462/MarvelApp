@@ -23,4 +23,13 @@ export class HeaderComponent {
     this.localStorageService.removeUserDataLocalStorage();
   }
 
+  toogleNavVar(){
+
+    const navMenu = document.getElementById("right-panel");
+    if(navMenu!=null){
+      navMenu.classList.toggle('open');
+    }
+   
+  }
+
 }

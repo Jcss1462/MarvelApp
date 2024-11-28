@@ -1,7 +1,8 @@
 /* Estilo de los enlaces en el header */
-header{
+header {
     min-height: 12vh;
 }
+
 header .nav-link {
     font-weight: bold;
     text-transform: uppercase;
@@ -10,20 +11,80 @@ header .nav-link {
 }
 
 header .nav-link:hover {
-    color: #f8b600; /* Color dorado */
+    color: #f8b600;
+    /* Color dorado */
 }
 
-header label{
+header label {
 
     font-weight: bold;
     text-transform: uppercase;
     color: #ffbb00;
 }
 
+
+/* Estilo del navvar */
+
+#right-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #DC3545;
+    border-left: 2px solid #ccc;
+    overflow-y: auto;
+    /* Hace el contenido desplazable */
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    display: none;
+    transition: all 0.3s ease-in-out;
+}
+
+
+#right-panel.open {
+    display: block;
+}
+
+
+#toogleButton {
+    color: black;
+    font-size: 2rem;
+    display: none;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+@media (max-width: 997px) {
+
+    /* Mostrar menú horizontal en pantallas grandes */
+    #toogleButton {
+        display: flex;
+    }
+
+    #top-panel {
+        display: none;
+    }
+}
+
+@media (min-width: 997px) {
+
+    /* Mostrar menú horizontal en pantallas grandes */
+    #right-panel.open {
+        display: none;
+    }
+
+}
+
+
+
 /* Estilo del footer */
-footer{
+footer {
     min-height: 10vh;
 }
+
 footer .social-media a {
     font-size: 1.2em;
     font-weight: bold;
@@ -34,7 +95,7 @@ footer .social-media a:hover {
     color: #f8b600;
 }
 
-#routerOutletContainer{
+#routerOutletContainer {
     min-height: 82vh;
     background: linear-gradient(145deg, #202020, #2c2c2c);
 }
