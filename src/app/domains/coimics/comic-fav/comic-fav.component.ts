@@ -136,4 +136,8 @@ export class ComicFavComponent {
       }
     );
   }
+
+  goToComicDetaiil(comicId:number){
+    this.router.navigate(['/comicDetail', comicId]);
+  }
 }

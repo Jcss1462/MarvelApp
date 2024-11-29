@@ -3,7 +3,7 @@ import { Comic } from '../../shared/Models/comic';
 import { ComicService } from '../../shared/services/comic.service';
 import { SpinnerService } from '../../shared/services/spinner.service';
 import { ToastrService } from 'ngx-toastr';
-import { Router } from '@angular/router';
+import { Router, RouterLinkWithHref } from '@angular/router';
 import { LocalStorageService } from '../../shared/services/local-storage.service';
 import { ComicFavorito } from '../../shared/Models/comicFavorito';
 import { HealthCheckService } from '../../shared/services/health-check.service';
@@ -147,6 +147,11 @@ export class ComicListComponent {
       );
     }
 
+  }
+
+
+  goToComicDetaiil(comicId:number){
+    this.router.navigate(['/comicDetail', comicId]);
   }
 
 }

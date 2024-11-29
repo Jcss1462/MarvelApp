@@ -4,9 +4,9 @@
         <div class="card">
             @if(comic.thumbnail.path != "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available"){
             <img [src]="comic.thumbnail.path + '.' + comic.thumbnail.extension" class="card-img-top"
-                alt="{{comic.title}}">
+                alt="{{comic.title}}" (click)="goToComicDetaiil(comic.id)">
             }@else{
-            <img src="assets/missMinutes.png" class="card-img-top" alt="{{comic.title}}">
+            <img src="assets/missMinutes.png" class="card-img-top" alt="{{comic.title}}" (click)="goToComicDetaiil(comic.id)">
             }
 
             <div class="card-body row">

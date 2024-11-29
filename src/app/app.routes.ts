@@ -5,6 +5,7 @@ import { RegisterComponent } from './domains/user/register/register.component';
 import { LoginComponent } from './domains/user/login/login.component';
 import { ForgotPasswordComponent } from './domains/user/forgot-password/forgot-password.component';
 import { ComicFavComponent } from './domains/coimics/comic-fav/comic-fav.component';
+import { ComicDetailComponent } from './domains/coimics/comic-detail/comic-detail.component';
 
 export const routes: Routes = [
 
@@ -32,6 +33,10 @@ export const routes: Routes = [
             ,{
                 path: "myFavoriteComics",
                 component: ComicFavComponent
+            }
+            ,{
+                path: "comicDetail/:id",
+                component: ComicDetailComponent
             }
 
 
