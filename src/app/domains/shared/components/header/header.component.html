@@ -33,7 +33,7 @@
             @if(userData() == null) {
             <a routerLink="/" class="nav-link">HOME <i class="bi bi-house"></i></a>    
             <a routerLink="/login" class="nav-link">INICIAR SESIÓN</a>
-            <a routerLink="/" class="nav-link" (click)="logOut()">CERRAR SESIÓN <i class="bi bi-x-circle-fill"></i></a>
+            <a routerLink="/signin" class="nav-link">REGISTRARSE</a>
             }@else {
             <label class="me-3">Hola, {{userData()!.nombre}}</label>
             <a routerLink="/" class="nav-link">HOME <i class="bi bi-house"></i></a>
