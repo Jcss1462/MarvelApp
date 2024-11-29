@@ -17,6 +17,7 @@ export interface Comic {
     urls: Url[];
     thumbnail: Thumbnail;
     image: Image[];
+    favorite: boolean;
 }
 
 export interface Url {

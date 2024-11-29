@@ -27,6 +27,7 @@
 .card-body {
   padding: 15px;
   height: 30%;
+  display: flex;
 }
 
 .card-title {
@@ -34,7 +35,24 @@
   font-weight: bold;
   color: #333;
   text-align: center;
-  height: 100px;
+  height: 50%;
+  overflow: hidden;
+}
+
+.card-fav{
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  height: 50%;
+}
+
+.card-fav i:hover{
+  cursor: pointer;
+}
+
+#favSi{
+  color: red;
 }
 
 /* Contenedor de la paginación */

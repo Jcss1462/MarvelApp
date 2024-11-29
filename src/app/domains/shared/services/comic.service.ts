@@ -4,6 +4,7 @@ import { environment } from '../../../../environments/environment.development';
 import { Observable } from 'rxjs';
 import { Comic } from '../Models/comic';
 import { ComicDataWrapper } from '../Models/comicDataWrapper';
+import { ComicFavorito } from '../Models/comicFavorito';
 
 @Injectable({
   providedIn: 'root'
@@ -33,4 +34,16 @@ export class ComicService {
     let response: Observable<ComicDataWrapper> = this.http.get<ComicDataWrapper>(url.toString(),options);
     return response;
   }
+
+  toogleFavorite(comicFavorito: ComicFavorito){
+    const url=environment.MarvelAppBack+"/ComicFavorito/UpdateComicFavorito";
+    return  this.http.put<void>(url, comicFavorito);
+  }
+
+  getFavoriteComicsAsString(userId:number) {
+    const url=new URL(environment.MarvelAppBack+"/ComicFavorito/GetFavoriteComics/"+userId);
+    const options={responseType: 'text' as 'json'};
+    return this.http.get<string>(url.toString(),options); 
+  }
+
 }
