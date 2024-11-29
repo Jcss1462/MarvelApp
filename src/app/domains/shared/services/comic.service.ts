@@ -14,7 +14,7 @@ export class ComicService {
 
   constructor() { }
 
-  getComicsList() {
+  getComicsList(currentPage:number,limit:number) {
 
     const url=new URL(environment.MarvelApi.url+"/comics");
 
@@ -22,7 +22,9 @@ export class ComicService {
       .set('ts', environment.MarvelApi.ts) 
       .set('apikey', environment.MarvelApi.apiKey)
       .set('hash', environment.MarvelApi.hash)
-      .set('limit', 50);
+      .set('limit', limit)
+      .set('orderBy', "issueNumber")
+      .set('offset', (currentPage-1)*limit);
 
     let options={
       params:params

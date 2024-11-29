@@ -1,30 +1,91 @@
-
-#container{
+#container {
   padding: 30px;
 }
+
 .card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .card-img-top {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
-  }
-  
-  .card-body {
-    padding: 15px;
-  }
-  
-  .card-title {
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: #333;
-    text-align: center;
-    height: 100px;
-  }
-  
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  height: 300px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  /* Aumenta el tamaño al 120% */
+}
+
+.card-img-top {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 15px;
+  height: 30%;
+}
+
+.card-title {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  height: 100px;
+}
+
+/* Contenedor de la paginación */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilo para los botones */
+.pagination button {
+  background-color: #007bff;
+  color: white;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Efecto hover para los botones */
+.pagination button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Deshabilitar los botones cuando no se puede hacer la acción */
+.pagination button[disabled] {
+  background-color: #d6d6d6;
+  color: #aaa;
+  cursor: not-allowed;
+  border-color: #d6d6d6;
+}
+
+/* Estilo para la página activa */
+.pagination button.active {
+  background-color: #0056b3;
+  border-color: #004085;
+}
+
+/* Estilo para los botones de los números de página */
+.pagination span {
+  font-size: 16px;
+  margin: 0 10px;
+  color: white;
+}
+
+.bottom{
+  display: flex;
+  height: 10px;
+  width: 100px;
+}

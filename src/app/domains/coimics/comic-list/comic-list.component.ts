@@ -14,22 +14,27 @@ import { Router } from '@angular/router';
 export class ComicListComponent {
 
   comics = signal<Comic[]>([]);
+  totalComics=signal<number>(0);
+  currentPage=signal<number>(1);
+  limit=signal<number>(24);
 
   private  comicService= inject(ComicService);
   private spinnerService = inject(SpinnerService);
 
+
   constructor(private toastr: ToastrService,private router: Router){}
 
   ngOnInit(): void {
-    this.getComicList();
+    this.getComicList(this.currentPage(),this.limit());
   }
 
-  private getComicList() {
+  private getComicList(pageNumber: number, limit:number) {
     this.spinnerService.showSpinner.update(() => true);
-    this.comicService.getComicsList()
+    this.comicService.getComicsList(pageNumber,limit)
     .subscribe({
       next: (comicWrapper) => {    
         this.comics.set(comicWrapper.data.results);
+        this.totalComics.set(comicWrapper.data.total);
         console.log( this.comics());
         this.spinnerService.showSpinner.update(() => false);
       },
@@ -39,5 +44,20 @@ export class ComicListComponent {
       }
     })
   }
+
+
+  
+
+  nextPage() {
+   this.currentPage.set(this.currentPage()+1);
+   this.getComicList(this.currentPage(),this.limit());
+  }
+
+  prevPage() {
+    this.currentPage.set(this.currentPage()-1);
+    this.getComicList(this.currentPage(),this.limit());
+  
+  }
+
 
 }
