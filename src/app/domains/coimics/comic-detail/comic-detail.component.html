@@ -40,18 +40,16 @@
                     }
                 </ul>
             </div>
-
+            @if(userData() != null){
             <div class="favorite">
-
-                @if(userData() != null){
                 @if(comic()!.favorite==false){
                 <h5 class="card-fav"><i (click)="toogleFavorito(comic()!.id)" id="favNo" class="bi bi-heart"></i></h5>
                 }@else{
                 <h5 class="card-fav"><i (click)="toogleFavorito(comic()!.id)" id="favSi" class="bi bi-heart-fill"></i>
                 </h5>
                 }
-                }
             </div>
+            }
 
         </div>
     </div>
