@@ -7,7 +7,8 @@
         <button id="toogleButton" class="me-3 btn"><i class="bi bi-list" (click)="toogleNavVar()"></i></button>
         <nav id="top-panel">
             @if(userData() == null) {
-            <ul class="nav">      
+            <ul class="nav">
+                <li class="nav-item"><a routerLink="/" class="nav-link">HOME <i class="bi bi-house"></i></a></li>
                 <li class="nav-item"><a routerLink="/login" class="nav-link">INICIAR SESIÓN</a></li>
                 <li class="nav-item"><a routerLink="/signin" class="nav-link">REGISTRARSE</a></li>
             </ul>
@@ -15,6 +16,8 @@
             <div class="d-flex align-items-center">
                 <label class="me-3">Hola, {{userData()!.nombre}}</label>
                 <ul class="nav">
+                    <li class="nav-item"><a routerLink="/" class="nav-link">HOME <i class="bi bi-house"></i></a>
+                    </li>
                     <li class="nav-item"><a routerLink="/myFavoriteComics" class="nav-link">VER FAVORITOS <i
                                 class="bi bi-heart-fill"></i></a></li>
                     <li class="nav-item"><a routerLink="/" class="nav-link" (click)="logOut()">CERRAR SESIÓN <i
@@ -28,12 +31,14 @@
             <button id="toogleButton" class="me-3 btn"><i class="bi bi-list" (click)="toogleNavVar()"></i></button>
 
             @if(userData() == null) {
-                <a routerLink="/login" class="nav-link">INICIAR SESIÓN</a>
-                <a routerLink="/" class="nav-link" (click)="logOut()">CERRAR SESIÓN <i class="bi bi-x-circle-fill"></i></a>
+            <a routerLink="/" class="nav-link">HOME <i class="bi bi-house"></i></a>    
+            <a routerLink="/login" class="nav-link">INICIAR SESIÓN</a>
+            <a routerLink="/" class="nav-link" (click)="logOut()">CERRAR SESIÓN <i class="bi bi-x-circle-fill"></i></a>
             }@else {
-                <label class="me-3">Hola, {{userData()!.nombre}}</label>
-                <a routerLink="/myFavoriteComics" class="nav-link">VER FAVORITOS <i class="bi bi-heart-fill"></i></a>
-                <a routerLink="/" class="nav-link" (click)="logOut()">CERRAR SESIÓN <i class="bi bi-x-circle-fill"></i></a>
+            <label class="me-3">Hola, {{userData()!.nombre}}</label>
+            <a routerLink="/" class="nav-link">HOME <i class="bi bi-house"></i></a>
+            <a routerLink="/myFavoriteComics" class="nav-link">VER FAVORITOS <i class="bi bi-heart-fill"></i></a>
+            <a routerLink="/" class="nav-link" (click)="logOut()">CERRAR SESIÓN <i class="bi bi-x-circle-fill"></i></a>
             }
         </nav>
 

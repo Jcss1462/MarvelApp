@@ -1,1 +1,25 @@
-<p>comic-fav works!</p>
+<div id="container" class="row">
+    @for (comic of comics(); track comic.id) {
+    <div class="col-lg-2">
+      <div class="card">
+        @if(comic.thumbnail.path != "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available"){
+            <img [src]="comic.thumbnail.path + '.' + comic.thumbnail.extension" class="card-img-top" alt="{{comic.title}}">
+        }@else{
+            <img src="assets/missMinutes.png" class="card-img-top" alt="{{comic.title}}">
+        }
+        
+        <div class="card-body row">
+          <h5 class="card-title">{{ comic.title }}</h5>
+          @if(userData() != null){
+            @if(comic.favorite==false){
+              <h5 class="card-fav"><i (click)="toogleFavorito(comic.id)" id="favNo" class="bi bi-heart"></i></h5>
+            }@else{
+              <h5 class="card-fav"><i (click)="toogleFavorito(comic.id)"id="favSi"class="bi bi-heart-fill"></i></h5>
+            }    
+          }
+        </div>
+      </div>
+    </div>
+    }
+</div>
+

@@ -46,4 +46,25 @@ export class ComicService {
     return this.http.get<string>(url.toString(),options); 
   }
 
+
+  getComicById(id: Number) {
+
+    const url=new URL(environment.MarvelApi.url+"/comics/"+id);
+
+    let params = new HttpParams()
+      .set('ts', environment.MarvelApi.ts) 
+      .set('apikey', environment.MarvelApi.apiKey)
+      .set('hash', environment.MarvelApi.hash);
+
+    let options={
+      params:params
+    }
+    
+    let response: Observable<ComicDataWrapper> = this.http.get<ComicDataWrapper>(url.toString(),options);
+    return response;
+  }
+
+
+  
+
 }
