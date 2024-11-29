@@ -1,0 +1,100 @@
+#comic-detail {
+  padding-top: 30px;
+}
+
+.back-button {
+  position: absolute;
+  top: 130px;
+  /* Ajusta según tu diseño */
+  left: 20px;
+  /* Ajusta según tu diseño */
+  z-index: 1;
+  background-color: #DC3545;
+  border: none;
+  color: #202020;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 2rem;
+}
+
+.back-button:hover {
+  background-color: #ff1e1e;
+  transform: scale(1.05);
+}
+
+.comic-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #FFBB00;
+}
+
+.comic-description {
+  font-size: 1rem;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.comic-pages {
+  font-size: 1rem;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+strong {
+  color: #FFBB00;
+}
+
+.comic-creators,
+.comic-characters {
+  font-size: 1rem;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.comic-creators ul,
+.comic-characters ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.comic-creators li,
+.comic-characters li {
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
+img {
+  height: 50vh;
+}
+
+
+.favorite{
+  display: flex;
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-color: white;
+}
+
+.card-fav {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  height: 50%;
+}
+
+.card-fav i:hover {
+  cursor: pointer;
+}
+
+#favSi {
+  color: red;
+}

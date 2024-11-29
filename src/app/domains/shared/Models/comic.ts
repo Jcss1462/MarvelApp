@@ -18,6 +18,8 @@ export interface Comic {
     thumbnail: Thumbnail;
     image: Image[];
     favorite: boolean;
+    creators: Creators;
+    characters: Characters;
 }
 
 export interface Url {
@@ -33,4 +35,17 @@ export interface Thumbnail {
 export interface Image  {
     path: string,
     extension: string
+}
+
+export interface Items  {
+    name: string,
+    type: string
+}
+
+export interface Creators  {
+    items: Items[],
+}
+
+export interface Characters  {
+    items: Items[],
 }
