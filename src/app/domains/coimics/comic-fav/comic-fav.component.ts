@@ -24,6 +24,7 @@ export class ComicFavComponent {
   private localStorageService = inject(LocalStorageService);
   private healtCheckService = inject(HealthCheckService);
   userData = this.localStorageService.userData;
+  showSpinner=this.spinnerService.showSpinner;
 
   constructor(private toastr: ToastrService, private router: Router) { }
 
@@ -37,7 +38,7 @@ export class ComicFavComponent {
     if (this.userData() != null) {
       //vacio la lista para recargarla
       this.comics.set([]);
-      
+
       this.spinnerService.showSpinner.update(() => true);
       //verifico que el backend este encendido
       this.healtCheckService.checkMarvelAppBackHealth().subscribe(
@@ -51,24 +52,31 @@ export class ComicFavComponent {
                 let arrIdComicFav = response.split(",");
                 arrIdComicFav.forEach(element => {
 
-                  this.spinnerService.showSpinner.update(() => true);
+                  if (element != "") {
 
-                  this.comicService.getComicById(parseInt(element)).subscribe({
-                    next: (comicDatataWrapper) => {
-                      //obtengo el comic y lo añado al objeto
-                      let currentComic:Comic =comicDatataWrapper.data.results[0];
-                      currentComic.favorite=true;
-                      this.comics.update((currentItem) => [...currentItem, currentComic]);
+                    this.spinnerService.showSpinner.update(() => true);
 
-                      this.spinnerService.showSpinner.update(() => false);
-                    },
-                    error: (err) => {
-                      console.log(err);
-                      this.toastr.info("Error al obtener comic por id: \n" + err);
-                      this.spinnerService.showSpinner.update(() => false);
-                    }
+                    this.comicService.getComicById(parseInt(element)).subscribe({
+                      next: (comicDatataWrapper) => {
+                        //obtengo el comic y lo añado al objeto
+                        let currentComic: Comic = comicDatataWrapper.data.results[0];
+                        currentComic.favorite = true;
+                        this.comics.update((currentItem) => [...currentItem, currentComic]);
 
-                  });
+                        this.spinnerService.showSpinner.update(() => false);
+                      },
+                      error: (err) => {
+                        console.log(err);
+                        this.toastr.info("Error al obtener comic por id: \n" + err);
+                        this.spinnerService.showSpinner.update(() => false);
+                      }
+
+                    });
+
+                  } else {
+                    this.spinnerService.showSpinner.update(() => false);
+                  }
+
 
                 });
 

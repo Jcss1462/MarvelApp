@@ -1,8 +1,8 @@
 #container {
     padding: 30px;
-  }
-  
-  .card {
+}
+
+.card {
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
@@ -11,47 +11,72 @@
     display: flex;
     height: 300px;
     transition: transform 0.3s ease;
-  }
-  
-  .card:hover {
+}
+
+.card:hover {
     transform: scale(1.05);
     /* Aumenta el tamaño al 120% */
-  }
-  
-  .card-img-top {
+}
+
+.card-img-top {
     width: 100%;
     height: 70%;
     object-fit: cover;
-  }
-  
-  .card-body {
+}
+
+.card-body {
     padding: 15px;
     height: 30%;
     display: flex;
-  }
-  
-  .card-title {
+}
+
+.card-title {
     font-size: 0.8rem;
     font-weight: bold;
     color: #333;
     text-align: center;
     height: 50%;
     overflow: hidden;
-  }
-  
-  .card-fav{
+}
+
+.card-fav {
     font-size: 1rem;
     font-weight: bold;
     color: #333;
     text-align: center;
     height: 50%;
-  }
-  
-  .card-fav i:hover{
+}
+
+.card-fav i:hover {
     cursor: pointer;
-  }
-  
-  #favSi{
+}
+
+#favSi {
     color: red;
-  }
-  
+}
+
+
+.no-comics {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+    /* Ocupa toda la altura visible del contenedor */
+    text-align: center;
+    color: #555;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #f8f9fa;
+    /* Fondo suave */
+    border: 1px dashed #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: auto;
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.no-comics h2 {
+    margin: 0;
+    color: #333;
+}
